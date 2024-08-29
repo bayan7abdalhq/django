@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Add Author</title>
 </head>
 <body>
-$END$
+    <h1>Add New Author</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'author_list' %}">Back to Authors List</a>
 </body>
 </html>

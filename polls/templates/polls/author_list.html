@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Authors List</title>
 </head>
 <body>
-$END$
+    <h1>Authors</h1>
+    <ul>
+        {% for author in authors %}
+            <li>{{ author.name }} - {{ author.bio }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_author' %}">Add Author</a>
+    <a href="{% url 'book_list' %}">View Books</a>
 </body>
 </html>
